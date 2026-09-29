@@ -24,22 +24,18 @@ for i in range(1, TOTAL_STUDENTS + 1):
     print("Enter marks for Student", i, "(0-100):")
     marks = float(input())
     
-    # Repeatedly prompt until a valid mark (0 to 100) is entered
     while marks > 100 or marks < 0:
         print("Please RE-ENTER marks correctly (0-100):")
         marks = float(input())
     
-    # Track running total
     total_marks = total_marks + marks
     
-    # Calculate highest and lowest marks
     if marks > highest_marks:
         highest_marks = marks
         
     if marks < lowest_marks:
         lowest_marks = marks
     
-    # Determine result and category counts using the new grading criteria
     if marks >= 90:
         result = "Pass - Excellent"
         pass_count = pass_count + 1
@@ -63,10 +59,8 @@ for i in range(1, TOTAL_STUDENTS + 1):
     print("--> Immediate Result for Student", i, ":", result)
     print("")
 
-# Calculate average
 avg_marks = total_marks / TOTAL_STUDENTS
 
-# Display Final Report
 print("===================================")
 print("          FINAL REPORT          ")
 print("===================================")
@@ -85,11 +79,9 @@ print("First Class (70-79):", first_class_count)
 print("Second Class (50-69):", second_class_count)
 print("===================================")
 
-# Additional analysis using only if statements and loops
 print("")
 print("=== PERFORMANCE ANALYSIS ===")
 
-# Check overall class performance
 if avg_marks >= 75:
     print("Overall Performance: Excellent")
 elif avg_marks >= 60:
@@ -99,7 +91,6 @@ elif avg_marks >= 50:
 else:
     print("Overall Performance: Needs Improvement")
 
-# Check pass percentage
 pass_percentage = (pass_count / TOTAL_STUDENTS) * 100
 if pass_percentage >= 80:
     print("Pass Rate: High -", pass_percentage, "%")
@@ -108,7 +99,6 @@ elif pass_percentage >= 50:
 else:
     print("Pass Rate: Low -", pass_percentage, "%")
 
-# Identify top performers (Excellent students)
 if excellent_count > 0:
     print("Number of Excellent students:", excellent_count)
     if excellent_count == TOTAL_STUDENTS:
@@ -116,7 +106,6 @@ if excellent_count > 0:
     elif excellent_count >= TOTAL_STUDENTS / 2:
         print("More than half the class achieved Excellent grade!")
 
-# Identify students who need improvement (Fail students)
 if fail_count > 0:
     print("Number of students who failed:", fail_count)
     if fail_count >= TOTAL_STUDENTS / 2:

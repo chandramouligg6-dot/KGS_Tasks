@@ -28,7 +28,6 @@ for i in range(1, TOTAL_STUDENTS + 1):
     if marks < lowest_marks:
         lowest_marks = marks
     
-    # Determine immediate result and category counts
     if marks >= 75:
         result = "Pass - Distinction"
         pass_count = pass_count + 1
@@ -48,10 +47,8 @@ for i in range(1, TOTAL_STUDENTS + 1):
     print("--> Immediate Result for Student", i, ":", result)
     print("")
 
-# Calculate average
 avg_marks = total_marks / TOTAL_STUDENTS
 
-# Display Final Report
 print("===================================")
 print("          FINAL REPORT          ")
 print("===================================")
